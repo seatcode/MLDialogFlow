@@ -1,22 +1,48 @@
 PODS:
-  - MLDialogFlow (0.1.0)
+  - ApiAI (0.7.2):
+    - ApiAI/Core (= 0.7.2)
+    - ApiAI/Events (= 0.7.2)
+    - ApiAI/ResponseMapping (= 0.7.2)
+    - ApiAI/UserEntities (= 0.7.2)
+  - ApiAI/Core (0.7.2)
+  - ApiAI/Events (0.7.2):
+    - ApiAI/Core
+  - ApiAI/ResponseMapping (0.7.2):
+    - ApiAI/Core
+  - ApiAI/UserEntities (0.7.2):
+    - ApiAI/Core
+  - MLDialogFlow (0.1.0):
+    - ApiAI
+    - RxSwift (~> 4.1)
   - Nimble (7.0.3)
   - Quick (1.2.0)
+  - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - ApiAI (from `git@github.com:metrolab/dialogflow-apple-client.git`, commit `ed8657b61a90fb795667f16adf18e394af8de1b6`)
   - MLDialogFlow (from `../`)
   - Nimble (~> 7.0.2)
   - Quick (~> 1.2.0)
 
 EXTERNAL SOURCES:
+  ApiAI:
+    :commit: ed8657b61a90fb795667f16adf18e394af8de1b6
+    :git: git@github.com:metrolab/dialogflow-apple-client.git
   MLDialogFlow:
     :path: ../
 
+CHECKOUT OPTIONS:
+  ApiAI:
+    :commit: ed8657b61a90fb795667f16adf18e394af8de1b6
+    :git: git@github.com:metrolab/dialogflow-apple-client.git
+
 SPEC CHECKSUMS:
-  MLDialogFlow: 58805d3f52458751eb3d8bcb02000b63fba2ea07
+  ApiAI: 79da744e00aebf9bf87bb2b5ec1a586eab2eb33c
+  MLDialogFlow: 47e48586dd5ccd935e2b6de8bf17f15bae16927c
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: 23753725a447829803404f53d1f4862f779f19a5
+PODFILE CHECKSUM: 9d518a4d36084a9204e5d7c9cf3d8b27b2065568
 
 COCOAPODS: 1.4.0

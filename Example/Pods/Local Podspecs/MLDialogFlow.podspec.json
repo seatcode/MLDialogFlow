@@ -1,22 +1,32 @@
 {
   "name": "MLDialogFlow",
   "version": "0.1.0",
-  "summary": "A short description of MLDialogFlow.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/elikohen@gmail.com/MLDialogFlow",
+  "summary": "DialogFlow iOS sdk improved and extended with voice",
+  "description": "Wraps DialogFlow iOS sdk with helper managers, adds native voice recognition and speech.\nThe original library doesn't provide swift support nor native voice recognition.\nThis library is used in the Aboutit application.",
+  "homepage": "https://github.com/metrolab/MLDialogFlow",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "elikohen@gmail.com": "elikohen@gmail.com"
+    "Eli Kohen": "eli.kohen@metropolis-lab.io"
   },
   "source": {
-    "git": "https://github.com/elikohen@gmail.com/MLDialogFlow.git",
+    "git": "https://github.com/metrolab/MLDialogFlow.git",
     "tag": "0.1.0"
   },
+  "social_media_url": "https://twitter.com/metrolabbcn",
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "MLDialogFlow/Classes/**/*"
+  "source_files": "MLDialogFlow/src/**/*",
+  "frameworks": "Speech",
+  "dependencies": {
+    "ApiAI": [
+
+    ],
+    "RxSwift": [
+      "~> 4.1"
+    ]
+  }
 }
