@@ -1,0 +1,6 @@
+framework module MLDialogFlow {
+  umbrella header "MLDialogFlow-umbrella.h"
+
+  export *
+  module * { export * }
+}

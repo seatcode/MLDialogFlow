@@ -1,0 +1,22 @@
+{
+  "name": "MLDialogFlow",
+  "version": "0.1.0",
+  "summary": "A short description of MLDialogFlow.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/elikohen@gmail.com/MLDialogFlow",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "elikohen@gmail.com": "elikohen@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/elikohen@gmail.com/MLDialogFlow.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "MLDialogFlow/Classes/**/*"
+}

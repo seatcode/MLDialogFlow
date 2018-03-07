@@ -1,0 +1,6 @@
+framework module Pods_MLDialogFlow_Tests {
+  umbrella header "Pods-MLDialogFlow_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

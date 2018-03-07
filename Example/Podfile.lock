@@ -1,0 +1,22 @@
+PODS:
+  - MLDialogFlow (0.1.0)
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - MLDialogFlow (from `../`)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+
+EXTERNAL SOURCES:
+  MLDialogFlow:
+    :path: ../
+
+SPEC CHECKSUMS:
+  MLDialogFlow: 58805d3f52458751eb3d8bcb02000b63fba2ea07
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: 23753725a447829803404f53d1f4862f779f19a5
+
+COCOAPODS: 1.4.0
