@@ -17,7 +17,7 @@ class MockLanguageProcessor: LanguageProcessor {
     var clearContextCalled = false
     var stopProcessingCalled = false
     
-    var processSuccess: (String?, String)?
+    var processSuccess: (String?, LanguageProcessorResult)?
     var processQuestion: String?
     var processError: Error?
 
@@ -31,7 +31,7 @@ class MockLanguageProcessor: LanguageProcessor {
             delegate?.didGetIntermediateQuestion(question)
         } else if let result = processSuccess {
             processSuccess = nil
-            delegate?.didComplete(message: result.0, deepLinkUrl: result.1)
+            delegate?.didComplete(message: result.0, result: result.1)
         }
     }
     func clearContext() {

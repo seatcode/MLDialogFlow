@@ -12,14 +12,17 @@
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		8CAA4A7A88D5A767891361E5 /* Pods_MLDialogFlow_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03204C8A4928C73C9EC4D14 /* Pods_MLDialogFlow_Example.framework */; };
 		A219852534D9E1866F58CB66 /* Pods_MLDialogFlow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3431D9060378316E0A32820 /* Pods_MLDialogFlow_Tests.framework */; };
 		C79F292F2050443200B5B58A /* VoiceControlManagerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F292E2050443200B5B58A /* VoiceControlManagerSpec.swift */; };
 		C79F2935205044EE00B5B58A /* MockLanguageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F2933205044EE00B5B58A /* MockLanguageProcessor.swift */; };
 		C79F2936205044EE00B5B58A /* MockSpeechManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F2934205044EE00B5B58A /* MockSpeechManager.swift */; };
 		C79F29382050451300B5B58A /* MockVoiceControlLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F29372050451300B5B58A /* MockVoiceControlLanguage.swift */; };
-		C79F293A205045EB00B5B58A /* MockAiResponseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F2939205045EB00B5B58A /* MockAiResponseResult.swift */; };
+		C79F293A205045EB00B5B58A /* MockLanguageProcessorResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F2939205045EB00B5B58A /* MockLanguageProcessorResult.swift */; };
+		C79F293F20504AFC00B5B58A /* TestableObserver+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F293C20504AFB00B5B58A /* TestableObserver+Utils.swift */; };
+		C79F294020504AFC00B5B58A /* Event+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F293D20504AFC00B5B58A /* Event+Util.swift */; };
+		C79F294120504AFC00B5B58A /* QuickSpec+Wait.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F293E20504AFC00B5B58A /* QuickSpec+Wait.swift */; };
+		C79F294320504B5B00B5B58A /* VoiceControlEvent+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79F294220504B5B00B5B58A /* VoiceControlEvent+Utils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +49,6 @@
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* MLDialogFlow_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MLDialogFlow_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		70DC3747B96AF493AAA025D4 /* Pods-MLDialogFlow_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLDialogFlow_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLDialogFlow_Tests/Pods-MLDialogFlow_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EF9F0878DB886650113EF95 /* Pods-MLDialogFlow_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MLDialogFlow_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MLDialogFlow_Example/Pods-MLDialogFlow_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		80A83E7EEB863FF6F0107640 /* MLDialogFlow.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MLDialogFlow.podspec; path = ../MLDialogFlow.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -55,7 +57,11 @@
 		C79F2933205044EE00B5B58A /* MockLanguageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockLanguageProcessor.swift; sourceTree = "<group>"; };
 		C79F2934205044EE00B5B58A /* MockSpeechManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSpeechManager.swift; sourceTree = "<group>"; };
 		C79F29372050451300B5B58A /* MockVoiceControlLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVoiceControlLanguage.swift; sourceTree = "<group>"; };
-		C79F2939205045EB00B5B58A /* MockAiResponseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAiResponseResult.swift; sourceTree = "<group>"; };
+		C79F2939205045EB00B5B58A /* MockLanguageProcessorResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLanguageProcessorResult.swift; sourceTree = "<group>"; };
+		C79F293C20504AFB00B5B58A /* TestableObserver+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestableObserver+Utils.swift"; sourceTree = "<group>"; };
+		C79F293D20504AFC00B5B58A /* Event+Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Event+Util.swift"; sourceTree = "<group>"; };
+		C79F293E20504AFC00B5B58A /* QuickSpec+Wait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "QuickSpec+Wait.swift"; sourceTree = "<group>"; };
+		C79F294220504B5B00B5B58A /* VoiceControlEvent+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VoiceControlEvent+Utils.swift"; sourceTree = "<group>"; };
 		E03204C8A4928C73C9EC4D14 /* Pods_MLDialogFlow_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MLDialogFlow_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -127,7 +133,6 @@
 			children = (
 				C79F2932205044CA00B5B58A /* unit */,
 				C79F2931205044C200B5B58A /* mock */,
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -166,7 +171,7 @@
 				C79F2933205044EE00B5B58A /* MockLanguageProcessor.swift */,
 				C79F2934205044EE00B5B58A /* MockSpeechManager.swift */,
 				C79F29372050451300B5B58A /* MockVoiceControlLanguage.swift */,
-				C79F2939205045EB00B5B58A /* MockAiResponseResult.swift */,
+				C79F2939205045EB00B5B58A /* MockLanguageProcessorResult.swift */,
 			);
 			path = mock;
 			sourceTree = "<group>";
@@ -174,9 +179,21 @@
 		C79F2932205044CA00B5B58A /* unit */ = {
 			isa = PBXGroup;
 			children = (
+				C79F293B20504AED00B5B58A /* helper */,
 				C79F292E2050443200B5B58A /* VoiceControlManagerSpec.swift */,
 			);
 			path = unit;
+			sourceTree = "<group>";
+		};
+		C79F293B20504AED00B5B58A /* helper */ = {
+			isa = PBXGroup;
+			children = (
+				C79F294220504B5B00B5B58A /* VoiceControlEvent+Utils.swift */,
+				C79F293D20504AFC00B5B58A /* Event+Util.swift */,
+				C79F293E20504AFC00B5B58A /* QuickSpec+Wait.swift */,
+				C79F293C20504AFB00B5B58A /* TestableObserver+Utils.swift */,
+			);
+			path = helper;
 			sourceTree = "<group>";
 		};
 		EBDDD9F40904D526F3DC77CC /* Pods */ = {
@@ -424,11 +441,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				C79F2935205044EE00B5B58A /* MockLanguageProcessor.swift in Sources */,
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 				C79F292F2050443200B5B58A /* VoiceControlManagerSpec.swift in Sources */,
 				C79F29382050451300B5B58A /* MockVoiceControlLanguage.swift in Sources */,
 				C79F2936205044EE00B5B58A /* MockSpeechManager.swift in Sources */,
-				C79F293A205045EB00B5B58A /* MockAiResponseResult.swift in Sources */,
+				C79F294320504B5B00B5B58A /* VoiceControlEvent+Utils.swift in Sources */,
+				C79F293A205045EB00B5B58A /* MockLanguageProcessorResult.swift in Sources */,
+				C79F294020504AFC00B5B58A /* Event+Util.swift in Sources */,
+				C79F293F20504AFC00B5B58A /* TestableObserver+Utils.swift in Sources */,
+				C79F294120504AFC00B5B58A /* QuickSpec+Wait.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

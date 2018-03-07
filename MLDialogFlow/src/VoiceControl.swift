@@ -15,7 +15,7 @@ public enum VoiceControlEvent {
     case recognizedText(String)
     case processing
     case question(String?)
-    case success(msg: String?, result: AIResponseResult)
+    case success(msg: String?, result: LanguageProcessorResult)
 }
 
 public protocol VoiceControlLanguage {

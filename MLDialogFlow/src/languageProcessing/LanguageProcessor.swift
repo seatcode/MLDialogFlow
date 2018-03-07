@@ -11,8 +11,14 @@ import ApiAI
 
 public protocol LanguageProcessorDelegate: class {
     func didGetIntermediateQuestion(_ text: String?)
-    func didComplete(message: String?, result: AIResponseResult)
+    func didComplete(message: String?, result: LanguageProcessorResult)
     func didFail(withError: Error)
+}
+
+public protocol LanguageProcessorResult {
+    var action: String? { get }
+    var speechMessages: [String] { get }
+    var params: [String: Any] { get }
 }
 
 public protocol LanguageProcessor: class {

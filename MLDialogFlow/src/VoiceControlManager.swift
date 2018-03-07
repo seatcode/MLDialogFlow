@@ -173,7 +173,7 @@ class VoiceControlManager: VoiceControl, LanguageProcessorDelegate {
         }
     }
     
-    func didComplete(message: String?, result: AIResponseResult) {
+    func didComplete(message: String?, result: LanguageProcessorResult) {
         speak(text: message) { [weak self] in
             self?.status.value = .idle
             self?.send(event: .success(msg: message, result: result))

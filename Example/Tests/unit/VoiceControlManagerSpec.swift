@@ -123,11 +123,11 @@ class VoiceControlManagerSpec: QuickSpec {
                         buildSut()
                         sut.isMuted = true
                         speechManager.textHandlerSuccess = ["show only pharmacies"]
-                        languageProcessor.processSuccess = ("showing only pharmacies", "aboutit://filter?poi_type=pharmacies&only=true")
+                        languageProcessor.processSuccess = ("showing only pharmacies", MockLanguageProcessorResult(action: "test"))
                         sut.start()
                     }
                     it("gets correct event flow") {
-                        let eventsValues: [VoiceControlEvent] = [.recognizedText("show only pharmacies"), .processing, .success(msg: "showing only pharmacies", result: MockAiResponseResult())]
+                        let eventsValues: [VoiceControlEvent] = [.recognizedText("show only pharmacies"), .processing, .success(msg: "showing only pharmacies", result: MockLanguageProcessorResult(action: "test"))]
                         expect(events.elements).toEventually(equal(eventsValues), timeout: 5, pollInterval: 0.1, description: nil)
                     }
                 }
@@ -137,7 +137,7 @@ class VoiceControlManagerSpec: QuickSpec {
                         sut.isMuted = true
                         speechManager.textHandlerSuccess = ["show only", "pharmacies"]
                         languageProcessor.processQuestion = "Which kind of poi you want to filter for?"
-                        languageProcessor.processSuccess = ("showing only pharmacies", "aboutit://filter?poi_type=pharmacies&only=true")
+                        languageProcessor.processSuccess = ("showing only pharmacies", MockLanguageProcessorResult(action: "test"))
                         sut.start()
                     }
                     it("gets correct event flow") {
@@ -146,7 +146,7 @@ class VoiceControlManagerSpec: QuickSpec {
                                                                  .question("Which kind of poi you want to filter for?"),
                                                                  .recognizedText("pharmacies"),
                                                                  .processing,
-                                                                 .success(msg: "showing only pharmacies", url: "aboutit://filter?poi_type=pharmacies&only=true")]
+                                                                 .success(msg: "showing only pharmacies", result: MockLanguageProcessorResult(action: "test"))]
                         expect(events.elements).toEventually(equal(eventsValues), timeout: 5, pollInterval: 0.1, description: nil)
                     }
                 }
