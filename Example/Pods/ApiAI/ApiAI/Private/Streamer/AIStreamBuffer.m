@@ -64,7 +64,7 @@
 - (void)write:(NSData *)data
 {
     dispatch_sync(mutex, ^{
-        [_data appendData:data];
+        [self->_data appendData:data];
     });
     
     if ([_outputStream hasSpaceAvailable] && _opened) {
@@ -84,22 +84,22 @@
 {
     dispatch_sync(mutex, ^{
     if ([self hasBytesForWriting]) {
-        NSUInteger availableLen = _data.length - _offset;
+        NSUInteger availableLen = self->_data.length - self->_offset;
         
-        uint8_t *buffer = (uint8_t *)_data.mutableBytes + _offset;
-        NSInteger writtenBytes = [_outputStream write:buffer maxLength:availableLen];
+        uint8_t *buffer = (uint8_t *)self->_data.mutableBytes + self->_offset;
+        NSInteger writtenBytes = [self->_outputStream write:buffer maxLength:availableLen];
         
         if (writtenBytes < 0) {
-            NSError *error = _outputStream.streamError;
+            NSError *error = self->_outputStream.streamError;
             
-            if ([_delegate respondsToSelector:@selector(streamBuffer:error:)]) {
-                [_delegate streamBuffer:self error:error];
+            if ([self->_delegate respondsToSelector:@selector(streamBuffer:error:)]) {
+                [self->_delegate streamBuffer:self error:error];
             }
             
             [self close];
             
         } else {
-            _offset += writtenBytes;
+            self->_offset += writtenBytes;
         }
     }
     });

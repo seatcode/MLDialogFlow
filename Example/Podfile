@@ -5,12 +5,13 @@ platform :ios, '10.0'
 target 'MLDialogFlow_Example' do
   pod "MLDialogFlow", :path => "../"
   # Overriding ApiAI
-  pod "ApiAI", :git => "git@github.com:metrolab/dialogflow-apple-client.git", :commit => "ed8657b61a90fb795667f16adf18e394af8de1b6"
+  pod "ApiAI", :git => "git@github.com:metrolab/dialogflow-apple-client.git", :commit => "5e2c5d0e84225bac454b3ff73db39cc76c2c4100"
 
   target 'MLDialogFlow_Tests' do
     inherit! :search_paths
 
     pod "Quick", "~> 1.2.0"
     pod "Nimble", "~> 7.0.2"
+    pod "RxTest", "~> 4.1.1"
   end
 end
