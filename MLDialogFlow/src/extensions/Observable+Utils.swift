@@ -8,19 +8,17 @@
 
 import RxSwift
 
-public extension ObservableType {
-    public func subscribeNext(onNext: ((Self.E) -> Void)?) -> Disposable {
+extension ObservableType {
+    func subscribeNext(onNext: ((Self.E) -> Void)?) -> Disposable {
         return subscribe(onNext: onNext)
     }
 }
 
-public extension PrimitiveSequenceType where TraitType == SingleTrait {
-    public func subscribeSuccess(onSuccess: ((Self.ElementType) -> Void)?) -> Disposable {
+extension PrimitiveSequenceType where TraitType == SingleTrait {
+    func subscribeSuccess(onSuccess: ((Self.ElementType) -> Void)?) -> Disposable {
         return subscribe(onSuccess: onSuccess, onError: nil)
     }
 }
-
-import RxSwift
 
 extension ObservableType {
 
@@ -31,8 +29,7 @@ extension ObservableType {
 
      Copyright (c) 2016 RxSwiftCommunity https://github.com/RxSwiftCommunity
      */
-
-    public func unwrap<T>() -> Observable<T> where E == Optional<T> {
+    func unwrap<T>() -> Observable<T> where E == Optional<T> {
         return self.filter { $0 != nil }.map { $0! }
     }
 }
