@@ -9,41 +9,37 @@
 import Foundation
 import ApiAI
 
-class MLVoiceBuilder {
+public class MLVoiceBuilder {
 
-    private var dialogFlowToken: String?
+    private let dialogFlowToken: String
     private var incompleteActions = [String]()
     private var recogniotionTime: TimeInterval = 1
     private var language: VoiceControlLanguage?
-
-    func token(_ dfToken: String) -> MLVoiceBuilder {
-        dialogFlowToken = dfToken
-        return self
+    
+    public init(dialogFlowToken: String) {
+        self.dialogFlowToken = dialogFlowToken
     }
 
-    func language(_ language: VoiceControlLanguage) -> MLVoiceBuilder {
+    public func language(_ language: VoiceControlLanguage) -> MLVoiceBuilder {
         self.language = language
         return self
     }
 
-    func recognitionTime(_ time: TimeInterval) -> MLVoiceBuilder {
+    public func recognitionTime(_ time: TimeInterval) -> MLVoiceBuilder {
         self.recogniotionTime = time
         return self
     }
 
-    func incompleteDFActions(_ actions: [String]) -> MLVoiceBuilder {
+    public func incompleteDFActions(_ actions: [String]) -> MLVoiceBuilder {
         incompleteActions = actions
         return self
     }
 
-    func build() throws -> VoiceControl {
-        guard let token = dialogFlowToken else {
-            throw NSError()
-        }
+    public func build() -> VoiceControl {
         let language = self.language ?? DefaultVCLanguage()
 
         let configuration = AIDefaultConfiguration()
-        configuration.clientAccessToken = token
+        configuration.clientAccessToken = dialogFlowToken
         ApiAI.shared().configuration = configuration
 
         let speechManager = SpeechManager()

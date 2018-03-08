@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,8 +21,59 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last recognized text:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bM1-dC-UfB">
+                                <rect key="frame" x="107" y="55" width="161" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0f-qh-jhO" userLabel="recognizedText">
+                                <rect key="frame" x="36" y="84" width="303" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Response:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYM-l6-Ugs">
+                                <rect key="frame" x="129" y="138.5" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w8e-Xe-xUm" userLabel="response">
+                                <rect key="frame" x="36" y="167.5" width="303" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cAa-qv-itm">
+                                <rect key="frame" x="139.5" y="257.5" width="95" height="30"/>
+                                <state key="normal" title="Start or Reset"/>
+                                <connections>
+                                    <action selector="startOrResetPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="9uH-vR-aRs"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="b0f-qh-jhO" secondAttribute="trailing" constant="20" id="8mU-WL-KaY"/>
+                            <constraint firstItem="EYM-l6-Ugs" firstAttribute="top" secondItem="b0f-qh-jhO" secondAttribute="bottom" constant="34" id="9aF-d6-hjR"/>
+                            <constraint firstItem="b0f-qh-jhO" firstAttribute="top" secondItem="bM1-dC-UfB" secondAttribute="bottom" constant="8" id="GPT-EX-f2h"/>
+                            <constraint firstItem="EYM-l6-Ugs" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="NYA-aU-mw5"/>
+                            <constraint firstItem="w8e-Xe-xUm" firstAttribute="top" secondItem="EYM-l6-Ugs" secondAttribute="bottom" constant="8" id="RvJ-dD-WIw"/>
+                            <constraint firstItem="cAa-qv-itm" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="TzL-K1-jmf"/>
+                            <constraint firstItem="bM1-dC-UfB" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="35" id="Wph-wM-O8K"/>
+                            <constraint firstItem="b0f-qh-jhO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="dJy-2G-TPd"/>
+                            <constraint firstItem="w8e-Xe-xUm" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="hGR-uc-OnW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w8e-Xe-xUm" secondAttribute="trailing" constant="20" id="kSb-iq-BUL"/>
+                            <constraint firstItem="cAa-qv-itm" firstAttribute="top" secondItem="w8e-Xe-xUm" secondAttribute="bottom" constant="69" id="mTo-5r-gJ5"/>
+                            <constraint firstItem="bM1-dC-UfB" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="mks-PT-fLe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="recognizedTextLabel" destination="b0f-qh-jhO" id="rp7-qY-bye"/>
+                        <outlet property="responseLabel" destination="w8e-Xe-xUm" id="hSd-yg-TKP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

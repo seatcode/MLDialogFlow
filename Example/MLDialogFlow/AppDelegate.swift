@@ -3,7 +3,7 @@
 //  MLDialogFlow
 //
 //  Created by elikohen@gmail.com on 03/07/2018.
-//  Copyright (c) 2018 elikohen@gmail.com. All rights reserved.
+//  Copyright © 2018 Metropolis Lab. All rights reserved.
 //
 
 import UIKit
