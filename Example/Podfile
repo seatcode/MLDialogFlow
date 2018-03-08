@@ -4,7 +4,7 @@ platform :ios, '10.0'
 def shared_pods
     pod "MLDialogFlow", :path => "../"
     # Overriding ApiAI
-    pod "ApiAI", :git => "git@github.com:metrolab/dialogflow-apple-client.git", :commit => "5e2c5d0e84225bac454b3ff73db39cc76c2c4100"
+    pod "ApiAI", :git => "git@github.com:metrolab/dialogflow-apple-client.git", :tag => "ml1.0.0"
 end
 
 target 'MLDialogFlow_Example' do
