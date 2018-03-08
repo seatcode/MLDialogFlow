@@ -56,6 +56,12 @@ Wherever you need the voice control manager just initialise it using the builder
 ```
 let voiceControl = MLVoiceBuilder(dialogFlowToken: "place_your_token_here").build()
 ```
+#### Customisation
+You can customise some elements using the builder, before calling the *build()* method:
+
+- **language**: Providing an implementation of VoiceControlLanguage you will be able to set the voice locale (speech and recognition) and dialog flow language.
+- **incompleteDFActions**: array of dialog flow intent names that mean "no action recognized". For instance you could provide an information intent, that does nothing but providing some information to the user.
+- **recognitionTime**: Time after you stopped talking to wait if more voice comes in before to send recognized text to dialog flow.
 
 ### 4. Start and listen to the manager
 
